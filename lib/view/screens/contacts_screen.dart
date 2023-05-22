@@ -38,6 +38,48 @@ class _ContactScreenState extends State<ContactScreen> {
         phone: '0123456789',
         address: '222B Baker street',
         image: 'assets/images/contacts.jpg'),
+    Contact(
+        name: 'CONTACT 1',
+        email: 'CONTACTEMAIL@gmail.com',
+        phone: '0123456789',
+        address: '222B Baker street',
+        image: 'assets/images/contacts.jpg'),
+    Contact(
+        name: 'CONTACT 2',
+        email: 'CONTACT2@gmail.com',
+        phone: '0123456789',
+        address: '222B Baker street',
+        image: 'assets/images/contacts.jpg'),
+    Contact(
+        name: 'CONTACT 3',
+        email: 'contact3@gmail.com',
+        phone: '0123456789',
+        address: '222B Baker street',
+        image: 'assets/images/contacts.jpg'),
+    Contact(
+        name: 'CONTACT 4',
+        email: 'contact4@gmail.com',
+        phone: '0123456789',
+        address: '222B Baker street',
+        image: 'assets/images/contacts.jpg'),
+    Contact(
+        name: 'CONTACT 5',
+        email: 'contact5@gmail.com',
+        phone: '0123456789',
+        address: '222B Baker street',
+        image: 'assets/images/contacts.jpg'),
+    Contact(
+        name: 'CONTACT 6',
+        email: 'contact6@gmail.com',
+        phone: '0123456789',
+        address: '222B Baker street',
+        image: 'assets/images/contacts.jpg'),
+    Contact(
+        name: 'CONTACT 7',
+        email: 'contact7@gmail.com',
+        phone: '0123456789',
+        address: '222B Baker street',
+        image: 'assets/images/contacts.jpg'),
   ];
   @override
   Widget build(BuildContext context) {
