@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: ThemeData.dark().copyWith(
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: Color.fromARGB(255, 20, 21, 31),

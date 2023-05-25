@@ -15,7 +15,7 @@ class ContactScreen extends StatefulWidget {
 class _ContactScreenState extends State<ContactScreen> {
   List<Contact> contacts = [
     Contact(
-        name: 'Lokman Hakim Bin Mohd Nor',
+        name: 'Lokman Touil',
         email: 'touillokman14@gmail.com',
         phone: '0123456789',
         address: '221B Baker street',
@@ -27,13 +27,13 @@ class _ContactScreenState extends State<ContactScreen> {
         address: 'West Coast Highway',
         image: 'assets/images/hood.jpg'),
     Contact(
-        name: 'Hakim Bin Laden',
+        name: 'Oussama Bin Laden',
         email: 'binladenUwU@gmail.com',
         phone: '01234346789',
         address: 'World Trade Center',
         image: 'assets/images/binladen.jpg'),
     Contact(
-        name: 'Anis Syafiqah Binti Mohd Nor',
+        name: 'Anis Dhia',
         email: 'anis.dhia@gmail.com',
         phone: '0123456789',
         address: '222B Baker street',
