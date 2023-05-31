@@ -1,4 +1,5 @@
 import 'package:contactapp/view/screens/contacts_screen.dart';
+import 'package:contactapp/view/screens/login_screen.dart';
 import 'package:contactapp/view/widgets/navigation_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color.fromARGB(255, 20, 21, 31),
         useMaterial3: true,
       ),
-      home: Navigation(),
+      home: LoginScreen(),
     );
   }
 }
