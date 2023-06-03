@@ -1,3 +1,4 @@
+import 'package:contactapp/view/widgets/navigation_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -16,15 +17,15 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 hintText: 'Username',
                 filled: true,
                 fillColor: Color.fromARGB(255, 20, 21, 31),
               ),
             ),
-            SizedBox(height: 16.0),
-            TextField(
+            const SizedBox(height: 16.0),
+            const TextField(
               obscureText: true,
               decoration: InputDecoration(
                 hintText: 'Password',
@@ -32,24 +33,25 @@ class LoginScreen extends StatelessWidget {
                 fillColor: Color.fromARGB(255, 20, 21, 31),
               ),
             ),
-            SizedBox(height: 24.0),
+            const SizedBox(height: 24.0),
             ButtonTheme(
               minWidth: 200.0, // Set the minimum width of the button
               height: 50.0, // Set the height of the button
               child: ElevatedButton(
                 onPressed: () {
                   // Perform login action
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Navigation()));
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius:
                         BorderRadius.circular(10.0), // Set the button shape
                   ),
-                  textStyle: TextStyle(
+                  textStyle: const TextStyle(
                     color: Colors.red, // Set the text color of the button
                   ),
                 ),
-                child: Text('Login'),
+                child: const Text('Login'),
               ),
             ),
           ],

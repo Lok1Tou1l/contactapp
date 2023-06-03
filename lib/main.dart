@@ -1,5 +1,5 @@
 import 'package:contactapp/view/screens/contacts_screen.dart';
-import 'package:contactapp/view/screens/login_screen.dart';
+import 'package:contactapp/view/screens/auth/login_screen.dart';
 import 'package:contactapp/view/widgets/navigation_widget.dart';
 import 'package:flutter/material.dart';
 
