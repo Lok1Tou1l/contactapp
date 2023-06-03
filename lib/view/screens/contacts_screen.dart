@@ -1,5 +1,6 @@
 import 'package:contactapp/model/contact_model.dart';
 import 'package:contactapp/view/screens/details_screen.dart';
+import 'package:contactapp/view/widgets/contact_widget.dart';
 import 'package:contactapp/view/widgets/search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -93,30 +94,7 @@ class _ContactScreenState extends State<ContactScreen> {
             child: ListView.builder(
                 itemCount: contacts.length,
                 itemBuilder: (context, index) {
-                  return ListTile(
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(contacts[index].phone),
-                        Text(contacts[index].email),
-                      ],
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => DetailsScreen(
-                                    contact: contacts[index],
-                                  )));
-                    },
-                    title: Text('${contacts[index].name}'),
-                    leading: CircleAvatar(
-                      backgroundImage: Image(
-                        image: AssetImage(contacts[index].image),
-                      ).image,
-                      backgroundColor: Colors.redAccent,
-                    ),
-                  );
+                  return ContactWidget(contact: contacts[index]);
                 }),
           )
         ]),

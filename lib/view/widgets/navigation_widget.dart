@@ -44,6 +44,81 @@ class _NavigationState extends State<Navigation> {
         appBar: AppBar(
           title: Text(_titles[_selectedIndex]),
         ),
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.redAccent,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: Image(
+                        image: AssetImage('assets/images/contacts.jpg'),
+                      ).image,
+                      backgroundColor: Colors.redAccent,
+                    ),
+                    Text(
+                      'Contact App',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              ListTile(
+                leading: Icon(Icons.home),
+                title: Text('Contacts'),
+                onTap: () {
+                  _pageController.animateToPage(0,
+                      duration: const Duration(milliseconds: 200),
+                      curve: Curves.easeIn);
+                  setState(() {
+                    _selectedIndex = 0;
+                  });
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.business),
+                title: Text('Groups'),
+                onTap: () {
+                  _pageController.animateToPage(1,
+                      duration: const Duration(milliseconds: 200),
+                      curve: Curves.easeIn);
+                  setState(() {
+                    _selectedIndex = 1;
+                  });
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.school),
+                title: Text('Favorites'),
+                onTap: () {
+                  _pageController.animateToPage(2,
+                      duration: const Duration(milliseconds: 200),
+                      curve: Curves.easeIn);
+                  setState(() {
+                    _selectedIndex = 2;
+                  });
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.settings),
+                title: Text('Settings'),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+        ),
         body: PageView(
           controller: _pageController,
           children: _screens,

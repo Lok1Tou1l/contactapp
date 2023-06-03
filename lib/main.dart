@@ -29,6 +29,9 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: Color.fromARGB(255, 20, 21, 31),
         useMaterial3: true,
+        drawerTheme: DrawerThemeData(
+          backgroundColor: Color.fromARGB(255, 20, 21, 31),
+        ),
       ),
       home: LoginScreen(),
     );
