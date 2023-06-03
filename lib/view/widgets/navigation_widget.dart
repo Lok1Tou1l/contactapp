@@ -2,8 +2,6 @@ import 'package:contactapp/view/screens/contacts_screen.dart';
 import 'package:contactapp/view/screens/favorites_screen.dart';
 import 'package:contactapp/view/screens/groups_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class Navigation extends StatefulWidget {
   const Navigation({super.key});
@@ -22,6 +20,12 @@ class _NavigationState extends State<Navigation> {
     FavoriteScreen(),
   ];
 
+  final List<String> _titles = const [
+    'Contacts',
+    'Groups',
+    'Favorites',
+  ];
+
   @override
   void dispose() {
     _pageController.dispose();
@@ -38,7 +42,7 @@ class _NavigationState extends State<Navigation> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Contacts'),
+          title: Text(_titles[_selectedIndex]),
         ),
         body: PageView(
           controller: _pageController,
