@@ -1,7 +1,5 @@
-import 'package:contactapp/model/contact_model.dart';
+import 'package:contactapp/data/models/contact_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import '../screens/details_screen.dart';
 
 class ContactWidget extends StatefulWidget {
@@ -51,7 +49,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                                     contact: widget.contact,
                                   )));
                     },
-                    title: Text('${widget.contact.name}'),
+                    title: Text(widget.contact.name),
                     leading: CircleAvatar(
                       backgroundImage: Image(
                         image: AssetImage(widget.contact.image),

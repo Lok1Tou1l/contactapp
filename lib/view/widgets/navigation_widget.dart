@@ -1,7 +1,12 @@
 import 'package:contactapp/view/screens/contacts_screen.dart';
 import 'package:contactapp/view/screens/favorites_screen.dart';
 import 'package:contactapp/view/screens/groups_screen.dart';
+import 'package:contactapp/view/widgets/drawer_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../data/repositories/firebase_auth.dart';
+import '../../shared/services/user_provider.dart';
 
 class Navigation extends StatefulWidget {
   const Navigation({super.key});
@@ -13,6 +18,7 @@ class Navigation extends StatefulWidget {
 class _NavigationState extends State<Navigation> {
   int _selectedIndex = 0;
   PageController _pageController = PageController();
+  bool isLoading = false;
 
   final List<Widget> _screens = const [
     ContactScreen(),
@@ -27,15 +33,35 @@ class _NavigationState extends State<Navigation> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+    addData();
+    _pageController = PageController(initialPage: 2);
+  }
+
+  addData() async {
+    setState(() {
+      isLoading = true;
+    });
+    UserProvider userProvider =
+        Provider.of<UserProvider>(context, listen: false);
+    await userProvider.refreshUser();
+    setState(() {
+      isLoading = false;
+    });
+  }
+
+  @override
   void dispose() {
     _pageController.dispose();
     super.dispose();
   }
 
-  @override
-  void initState() {
-    _pageController = PageController(initialPage: _selectedIndex);
-    super.initState();
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+    _pageController.jumpToPage(index);
   }
 
   @override
@@ -44,81 +70,7 @@ class _NavigationState extends State<Navigation> {
         appBar: AppBar(
           title: Text(_titles[_selectedIndex]),
         ),
-        drawer: Drawer(
-          child: ListView(
-            children: [
-              DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.redAccent,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CircleAvatar(
-                      backgroundImage: Image(
-                        image: AssetImage('assets/images/contacts.jpg'),
-                      ).image,
-                      backgroundColor: Colors.redAccent,
-                    ),
-                    Text(
-                      'Contact App',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              ListTile(
-                leading: Icon(Icons.home),
-                title: Text('Contacts'),
-                onTap: () {
-                  _pageController.animateToPage(0,
-                      duration: const Duration(milliseconds: 200),
-                      curve: Curves.easeIn);
-                  setState(() {
-                    _selectedIndex = 0;
-                  });
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.business),
-                title: Text('Groups'),
-                onTap: () {
-                  _pageController.animateToPage(1,
-                      duration: const Duration(milliseconds: 200),
-                      curve: Curves.easeIn);
-                  setState(() {
-                    _selectedIndex = 1;
-                  });
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.school),
-                title: Text('Favorites'),
-                onTap: () {
-                  _pageController.animateToPage(2,
-                      duration: const Duration(milliseconds: 200),
-                      curve: Curves.easeIn);
-                  setState(() {
-                    _selectedIndex = 2;
-                  });
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.settings),
-                title: Text('Settings'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ],
-          ),
-        ),
+        drawer: const NavDrawer(),
         body: PageView(
           controller: _pageController,
           children: _screens,

@@ -20,8 +20,8 @@ class _SearchWidgetState extends State<SearchWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final styleActive = TextStyle(color: Color.fromARGB(255, 250, 250, 250));
-    final styleHint = TextStyle(color: Color.fromARGB(137, 255, 255, 255));
+    const styleActive = TextStyle(color: Color.fromARGB(255, 250, 250, 250));
+    const styleHint = TextStyle(color: Color.fromARGB(137, 255, 255, 255));
     final style = widget.text.isEmpty ? styleHint : styleActive;
 
     return Container(
@@ -29,7 +29,7 @@ class _SearchWidgetState extends State<SearchWidget> {
       margin: const EdgeInsets.fromLTRB(16, 16, 16, 16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: Color.fromARGB(255, 31, 31, 36),
+        color: const Color.fromARGB(255, 31, 31, 36),
         border: Border.all(color: Colors.black26),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 8),

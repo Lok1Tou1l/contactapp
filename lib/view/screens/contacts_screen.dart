@@ -1,10 +1,7 @@
-import 'package:contactapp/model/contact_model.dart';
-import 'package:contactapp/view/screens/details_screen.dart';
+import 'package:contactapp/data/models/contact_model.dart';
 import 'package:contactapp/view/widgets/contact_widget.dart';
 import 'package:contactapp/view/widgets/search_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class ContactScreen extends StatefulWidget {
   const ContactScreen({super.key});
@@ -89,7 +86,7 @@ class _ContactScreenState extends State<ContactScreen> {
         padding: const EdgeInsets.all(8.0),
         child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
           SearchWidget(text: 'Search', hintText: 'Search'),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Expanded(
             child: ListView.builder(
                 itemCount: contacts.length,

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import '../../model/contact_model.dart';
+import '../../data/models/contact_model.dart';
 
 class DetailsScreen extends StatefulWidget {
   final Contact contact;
@@ -16,7 +14,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          actions: [IconButton(onPressed: () {}, icon: Icon(Icons.edit))],
+          actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.edit))],
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -24,7 +22,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                     width: double.infinity,
                   ),
@@ -33,50 +31,50 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     backgroundColor: Colors.blue,
                     radius: 50,
                   ),
-                  SizedBox(height: 20),
-                  Text(widget.contact.name, style: TextStyle(fontSize: 30)),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
+                  Text(widget.contact.name, style: const TextStyle(fontSize: 30)),
+                  const SizedBox(height: 20),
                   Text(widget.contact.phone,
                       style:
                           TextStyle(fontSize: 18, color: Colors.grey.shade400)),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Text(widget.contact.email,
-                      style: TextStyle(fontSize: 14, color: Colors.grey)),
-                  SizedBox(height: 20),
+                      style: const TextStyle(fontSize: 14, color: Colors.grey)),
+                  const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       IconButton(
                         highlightColor: Colors.green,
                         onPressed: () {},
-                        icon: Icon(Icons.call_rounded),
+                        icon: const Icon(Icons.call_rounded),
                         color: Colors.green,
                       ),
                       IconButton(
                         highlightColor: Colors.blue,
                         onPressed: () {},
-                        icon: Icon(Icons.message_rounded),
+                        icon: const Icon(Icons.message_rounded),
                         color: Colors.blue,
                       ),
                       IconButton(
                         highlightColor: Colors.redAccent,
                         onPressed: () {},
-                        icon: Icon(Icons.video_call),
+                        icon: const Icon(Icons.video_call),
                         color: Colors.redAccent,
                       ),
                     ],
                   ),
-                  SizedBox(height: 35),
-                  Align(
+                  const SizedBox(height: 35),
+                  const Align(
                       alignment: Alignment.center,
                       child: Text('Notes',
                           style: TextStyle(fontFamily: 'Arial', fontSize: 20))),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Card(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
-                    child: Padding(
-                      padding: const EdgeInsets.all(64.0),
+                    child: const Padding(
+                      padding: EdgeInsets.all(64.0),
                       child: Text('Notes', style: TextStyle(fontSize: 20)),
                     ),
                   ),
