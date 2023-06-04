@@ -5,7 +5,6 @@ import 'package:contactapp/view/widgets/drawer_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../data/repositories/firebase_auth.dart';
 import '../../shared/services/user_provider.dart';
 
 class Navigation extends StatefulWidget {

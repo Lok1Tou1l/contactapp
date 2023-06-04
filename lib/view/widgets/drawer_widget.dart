@@ -6,8 +6,6 @@ import 'package:contactapp/shared/styles/themes.dart';
 import 'package:contactapp/view/screens/settings_screen.dart';
 import 'package:provider/provider.dart';
 
-import '../../data/repositories/firebase_auth.dart';
-import '../../shared/styles/themes.dart';
 
 class NavDrawer extends StatefulWidget {
   const NavDrawer({Key? key}) : super(key: key);

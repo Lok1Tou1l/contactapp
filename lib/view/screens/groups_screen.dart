@@ -1,7 +1,5 @@
 import 'package:contactapp/view/widgets/contact_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 import '../../data/models/contact_model.dart';
 
@@ -90,8 +88,8 @@ class _GrouopScreenState extends State<GrouopScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Administration", style: TextStyle(fontSize: 20),),
-          SizedBox(height: 10,),
+          const Text("Administration", style: TextStyle(fontSize: 20),),
+          const SizedBox(height: 10,),
           ListView(
             shrinkWrap: true,
             children: [
@@ -99,8 +97,8 @@ class _GrouopScreenState extends State<GrouopScreen> {
               ContactWidget(contact: contacts[3]),
             ],
           ),
-          Text("Professor", style: TextStyle(fontSize: 20),),
-          SizedBox(height: 10,),
+          const Text("Professor", style: TextStyle(fontSize: 20),),
+          const SizedBox(height: 10,),
           ListView(
             shrinkWrap: true,
             children: [
@@ -109,8 +107,8 @@ class _GrouopScreenState extends State<GrouopScreen> {
               ContactWidget(contact: contacts[8]),
             ],
           ),
-          Text("Student", style: TextStyle(fontSize: 20),),
-          SizedBox(height: 10,),
+          const Text("Student", style: TextStyle(fontSize: 20),),
+          const SizedBox(height: 10,),
           ListView(
             shrinkWrap: true,
             children: [
