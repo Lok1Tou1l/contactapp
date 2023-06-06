@@ -29,7 +29,7 @@ class _NavDrawerState extends State<NavDrawer> {
             child: Column(
               children: [
                 CircleAvatar(
-                  backgroundColor: Colors.red,
+                  backgroundColor: Colors.redAccent,
                   backgroundImage: NetworkImage(user.photoUrl),
                   radius: 25,
                 ),
@@ -105,7 +105,7 @@ class _NavDrawerState extends State<NavDrawer> {
             builder: (context, value, child) {
               return CupertinoSwitch(
                   value: value.darkTheme,
-                  activeColor: Colors.red,
+                  activeColor: Colors.redAccent,
                   onChanged: (newValue) {
                     value.toggleTheme();
                   });

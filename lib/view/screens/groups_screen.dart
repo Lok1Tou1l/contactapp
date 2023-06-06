@@ -11,7 +11,6 @@ class GrouopScreen extends StatefulWidget {
 }
 
 class _GrouopScreenState extends State<GrouopScreen> {
-
   List<Contact> contacts = [
     Contact(
         name: 'Lokman Touil',
@@ -20,11 +19,11 @@ class _GrouopScreenState extends State<GrouopScreen> {
         address: '221B Baker street',
         image: 'assets/images/contact.jpg'),
     Contact(
-        name: 'Jalil Kizma',
-        email: 'KizmaHood55@gmail.com',
+        name: 'Chemam Chawki',
+        email: 'ChemamChawki@hotmail.com',
         phone: '0169456789',
         address: 'West Coast Highway',
-        image: 'assets/images/hood.jpg'),
+        image: 'assets/images/contacts.jpg'),
     Contact(
         name: 'Oussama Bin Laden',
         email: 'binladenUwU@gmail.com',
@@ -44,8 +43,8 @@ class _GrouopScreenState extends State<GrouopScreen> {
         address: '222B Baker street',
         image: 'assets/images/contacts.jpg'),
     Contact(
-        name: 'CONTACT 2',
-        email: 'CONTACT2@gmail.com',
+        name: 'Bentrad Sassi',
+        email: 'sassibentrad@gmail.com',
         phone: '0123456789',
         address: '222B Baker street',
         image: 'assets/images/contacts.jpg'),
@@ -62,7 +61,7 @@ class _GrouopScreenState extends State<GrouopScreen> {
         address: '222B Baker street',
         image: 'assets/images/contacts.jpg'),
     Contact(
-        name: 'CONTACT 5',
+        name: 'Gasmi Ibtissam',
         email: 'contact5@gmail.com',
         phone: '0123456789',
         address: '222B Baker street',
@@ -88,17 +87,28 @@ class _GrouopScreenState extends State<GrouopScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("Administration", style: TextStyle(fontSize: 20),),
-          const SizedBox(height: 10,),
+          const Text(
+            "Administration",
+            style: TextStyle(fontSize: 20),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
           ListView(
             shrinkWrap: true,
             children: [
-              ContactWidget(contact: contacts[0]),
-              ContactWidget(contact: contacts[3]),
+              ContactWidget(contact: contacts[4]),
+              ContactWidget(contact: contacts[6]),
+              ContactWidget(contact: contacts[7]),
             ],
           ),
-          const Text("Professor", style: TextStyle(fontSize: 20),),
-          const SizedBox(height: 10,),
+          const Text(
+            "Professor",
+            style: TextStyle(fontSize: 20),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
           ListView(
             shrinkWrap: true,
             children: [
@@ -107,14 +117,18 @@ class _GrouopScreenState extends State<GrouopScreen> {
               ContactWidget(contact: contacts[8]),
             ],
           ),
-          const Text("Student", style: TextStyle(fontSize: 20),),
-          const SizedBox(height: 10,),
+          const Text(
+            "Student",
+            style: TextStyle(fontSize: 20),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
           ListView(
             shrinkWrap: true,
             children: [
-              ContactWidget(contact: contacts[4]),
-              ContactWidget(contact: contacts[6]),
-              ContactWidget(contact: contacts[7]),
+              ContactWidget(contact: contacts[0]),
+              ContactWidget(contact: contacts[3]),
             ],
           ),
         ],

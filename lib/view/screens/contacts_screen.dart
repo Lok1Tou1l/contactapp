@@ -85,7 +85,7 @@ class _ContactScreenState extends State<ContactScreen> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-          SearchWidget(text: 'Search', hintText: 'Search'),
+          //SearchWidget(text: 'Search', hintText: 'Search'),
           const SizedBox(height: 10),
           Expanded(
             child: ListView.builder(

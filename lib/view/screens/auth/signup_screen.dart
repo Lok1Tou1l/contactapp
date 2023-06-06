@@ -110,13 +110,13 @@ class _LoginScreenState extends State<SignUpScreen> {
                               ? CircleAvatar(
                                   radius: 54,
                                   backgroundImage: MemoryImage(_image!),
-                                  backgroundColor: Colors.red,
+                                  backgroundColor: Colors.redAccent,
                                 )
                               : const CircleAvatar(
                                   radius: 54,
                                   backgroundImage: NetworkImage(
                                       'https://i.stack.imgur.com/l60Hf.png'),
-                                  backgroundColor: Colors.red,
+                                  backgroundColor: Colors.redAccent,
                                 ),
                           Positioned(
                             bottom: -10,
@@ -177,7 +177,7 @@ class _LoginScreenState extends State<SignUpScreen> {
                       height: 4.h,
                     ),
                     ButtonWidget(
-                        color: MyThemes.primary,
+                        color: Colors.redAccent,
                         width: 80.w,
                         title: 'CREATE ACCOUNT',
                         func: () async {
@@ -193,7 +193,7 @@ class _LoginScreenState extends State<SignUpScreen> {
                             MySnackBar.error(
                                 message:
                                     'Please Check Your Interenet Connection',
-                                color: Colors.red,
+                                color: Colors.redAccent,
                                 context: context);
                           }
                         }),
@@ -229,7 +229,7 @@ class _LoginScreenState extends State<SignUpScreen> {
                                 .displayLarge
                                 ?.copyWith(
                                     fontSize: 9.sp,
-                                    color: MyThemes.primary,
+                                    color:Colors.redAccent,
                                     fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -254,7 +254,7 @@ class _LoginScreenState extends State<SignUpScreen> {
               password: _passwordController.text,
               file: _image)
           .onError((error, stackTrace) => MySnackBar.error(
-              message: error.toString(), color: Colors.red, context: context));
+              message: error.toString(), color: Colors.redAccent, context: context));
       if (FirebaseAuth.instance.currentUser != null) {
         // Navigator.pop(context);
         Navigator.push(context,

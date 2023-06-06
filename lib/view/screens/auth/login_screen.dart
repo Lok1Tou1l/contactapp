@@ -111,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 4.h,
                     ),
                     ButtonWidget(
-                        color: MyThemes.primary,
+                        color: Colors.redAccent,
                         width: 80.w,
                         title: 'Login',
                         func: () async {
@@ -126,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             MySnackBar.error(
                                 message:
                                     'Please Check Your Internet Connection',
-                                color: Colors.red,
+                                color: Colors.redAccent,
                                 context: context);
                           }
                         }),
@@ -163,7 +163,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 .displayLarge
                                 ?.copyWith(
                                     fontSize: 9.sp,
-                                    color: MyThemes.primary,
+                                    color: Colors.redAccent,
                                     fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -186,7 +186,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               .displayLarge
                               ?.copyWith(
                                   fontSize: 9.sp,
-                                  color: MyThemes.primary,
+                                  color: Colors.redAccent,
                                   fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(
@@ -224,7 +224,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold),
                               ),
-                              backgroundColor: MyThemes.primary,
+                              backgroundColor: Colors.redAccent,
                             ));
                           },
                           child: Image.asset(
@@ -248,7 +248,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold),
                               ),
-                              backgroundColor: MyThemes.primary,
+                              backgroundColor: Colors.redAccent,
                             ));
                           },
                           child: Image.asset(
@@ -283,7 +283,7 @@ class _LoginScreenState extends State<LoginScreen> {
               email: _emailController.text, password: _passwordController.text)
           .onError((error, stackTrace) {
         MySnackBar.error(
-            message: error.toString(), color: Colors.red, context: context);
+            message: error.toString(), color: Colors.redAccent, context: context);
       });
       if (FirebaseAuth.instance.currentUser != null) {
         Navigator.pop(context);
